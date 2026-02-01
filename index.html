@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Modern Residence | Architectural Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #a8a29e;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: #e7e5e4;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .ken-burns {
+            animation: kenburns 30s ease-in-out infinite alternate;
+        }
+        @keyframes kenburns {
+            from { transform: scale(1); }
+            to { transform: scale(1.15) translate(-1%, -1%); }
+        }
+        .reveal-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transform: translateY(100%);
+            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-text.active {
+            transform: translateY(0);
+        }
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(5px);
+            transition: all 1.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+        .image-parallax {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="q1.png" 
+                 class="w-full h-full object-cover ken-burns" alt="Hero View">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0a0a0a]"></div>
+        </div>
+        <div class="relative z-10 text-center">
+            <div class="overflow-hidden h-20 md:h-28">
+                <h1 class="text-5xl md:text-8xl font-extralight tracking-tighter reveal-text" id="hero-title">
+                     <span class="font-light italic text-white"></span>
+                </h1>
+            </div>
+            <p class="text-[10px] md:text-xs tracking-[0.6em] uppercase text-white font-light mt-4 opacity-0 transition-opacity duration-1000 delay-700" id="hero-sub">
+                made for Arq. Andrés Araico
+        </div>
+    </section>
+
+    <!-- 2. ARCHITECTURAL FORM -->
+    <section class="py-32 px-6 md:px-20 lg:px-40">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-end reveal-section">
+            <div class="lg:col-span-8 overflow-hidden rounded-sm group shadow-2xl">
+                <img src="q2.png" 
+                     class="w-full grayscale-[50%] group-hover:grayscale-0 transition-all duration-[2s] object-cover" alt="Architectural Form">
+            </div>
+            <div class="lg:col-span-4 space-y-6">
+                <span class="text-[10px] tracking-[0.4em] uppercase text-stone-600 block">Genesis — 01</span>
+                <h2 class="text-3xl font-extralight leading-tight">Geometric <br/>Longevity</h2>
+                <p class="text-stone-500 font-light leading-relaxed text-sm">
+                    Flat roof geometry and deep overhangs define a residence designed for extreme privacy and environmental resilience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRIVACY & WELLNESS -->
+    <section class="bg-[#0f0f0f] py-40">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto mb-24 reveal-section">
+                <h2 class="text-4xl font-extralight text-center mb-12 italic text-stone-300">Inward-facing serenity.</h2>
+                <div class="rounded-sm overflow-hidden shadow-2xl">
+                    <img src="q4.png" 
+                         class="w-full h-[60vh] object-cover" alt="Privacy View">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="reveal-section flex flex-col items-center text-center" style="transition-delay: 200ms;">
+                    <div class="h-px w-12 bg-stone-700 mb-8"></div>
+                    <h4 class="text-[10px] tracking-[0.4em] uppercase text-stone-400 mb-4">Private Core</h4>
+                    <p class="text-xs text-stone-500 font-light leading-relaxed">Living zones oriented entirely away from the public gaze.</p>
+                </div>
+                <div class="reveal-section flex flex-col items-center text-center" style="transition-delay: 400ms;">
+                    <div class="h-px w-12 bg-stone-700 mb-8"></div>
+                    <h4 class="text-[10px] tracking-[0.4em] uppercase text-stone-400 mb-4">Dust Buffer</h4>
+                    <p class="text-xs text-stone-500 font-light leading-relaxed">Dense landscaping acting as an environmental shield.</p>
+                </div>
+                <div class="reveal-section flex flex-col items-center text-center" style="transition-delay: 600ms;">
+                    <div class="h-px w-12 bg-stone-700 mb-8"></div>
+                    <h4 class="text-[10px] tracking-[0.4em] uppercase text-stone-400 mb-4">Micro Climate</h4>
+                    <p class="text-xs text-stone-500 font-light leading-relaxed">Allergy-reduced living through selective plant species.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SELF-SUFFICIENCY -->
+    <section class="py-40 px-6 md:px-20 lg:px-40 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="space-y-16 reveal-section">
+            <div>
+                <span class="text-[10px] tracking-[0.4em] uppercase text-stone-600 block mb-6">Autonomy — 02</span>
+                <h2 class="text-5xl font-extralight">Self-Sustaining <br/>Systems</h2>
+            </div>
+            <div class="space-y-10">
+                <div class="flex gap-6 items-start">
+                    <div class="text-stone-600 mt-1">01</div>
+                    <div>
+                        <h5 class="text-xs tracking-widest uppercase text-stone-300 mb-2">Solar Integration</h5>
+                        <p class="text-xs text-stone-500 font-light">Photovoltaic tiles invisibly merged into the flat roof.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="text-stone-600 mt-1">02</div>
+                    <div>
+                        <h5 class="text-xs tracking-widest uppercase text-stone-300 mb-2">Water Autonomy</h5>
+                        <p class="text-xs text-stone-500 font-light">Advanced rainwater filtration for complete independence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reveal-section">
+            <div class="relative group">
+                <img src="q3.png" 
+                     class="w-full h-[70vh] object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" alt="Systems Detail">
+                <div class="absolute -bottom-8 -left-8 glass-card p-8 hidden xl:block max-w-[240px]">
+                    <p class="text-[10px] italic text-stone-400 leading-loose">
+                        "Luxury is the freedom of total independence from public infrastructure."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- IMAGE GALLERY -->
+    <section class="py-32 px-6 md:px-20 lg:px-40">
+        <div class="space-y-16">
+            <div class="text-center mb-16 reveal-section">
+                <h2 class="text-4xl font-extralight">Project Images</h2>
+            </div>
+            <div class="space-y-16">
+                <div class="reveal-section">
+                    <img src="q1.png" class="w-full object-cover rounded-sm shadow-2xl" alt="Image 1">
+                </div>
+                <div class="reveal-section" style="transition-delay: 200ms;">
+                    <img src="q2.png" class="w-full object-cover rounded-sm shadow-2xl" alt="Image 2">
+                </div>
+                <div class="reveal-section" style="transition-delay: 400ms;">
+                    <img src="q3.png" class="w-full object-cover rounded-sm shadow-2xl" alt="Image 3">
+                </div>
+                <div class="reveal-section" style="transition-delay: 600ms;">
+                    <img src="q4.png" class="w-full object-cover rounded-sm shadow-2xl" alt="Image 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FINAL -->
+    <section class="h-[60vh] flex items-center justify-center">
+        <div class="text-center reveal-section">
+            <p class="text-2xl font-extralight tracking-[0.2em] text-stone-500 mb-4 italic">Architecture for the future.</p>
+            <p class="text-[10px] tracking-[0.8em] uppercase text-white"><span class="font-light italic">Arq. Andrés Araico</span></p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero Animation
+            setTimeout(() => {
+                document.getElementById('hero-title').classList.add('active');
+                document.getElementById('hero-sub').classList.remove('opacity-0');
+            }, 500);
+
+            // Scroll Observer
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Parallax effect on mouse move
+            document.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+                const heroImage = document.querySelector('.ken-burns');
+                if (heroImage) {
+                    heroImage.style.transform = `scale(1.15) translate(${moveX}px, ${moveY}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+- [ ] Fix extra closing span tag in hero title
+- [ ] Update hero subtitle to "Architectural Mastery by Arq. Andrés Araico"
